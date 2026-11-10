@@ -4,7 +4,7 @@ A developer portal for your OpenAPI specs, built with **[RapiDoc Portal](https:/
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/rapi-doc/rapidoc-portal-starter)
 [![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/rapi-doc/rapidoc-portal-starter/tree/main)
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/RAILWAY_TEMPLATE_CODE)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/eq5i1k?referralCode=tI_nkc)
 
 ## Make it yours
 
