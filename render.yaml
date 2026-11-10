@@ -1,0 +1,11 @@
+# Render Blueprint: Render Dashboard → New → Blueprint → this repository.
+# rapidoc serve listens on $PORT, which Render sets. Sign-in secrets (RAPIDOC_SESSION_SECRET, ...)
+# go in the service's Environment settings, never in this file.
+services:
+  - type: web
+    name: rapidoc-portal-starter
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /_rapidoc/health

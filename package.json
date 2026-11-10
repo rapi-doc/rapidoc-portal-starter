@@ -1,0 +1,23 @@
+{
+  "name": "rapidoc-portal-starter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "rapidoc dev",
+    "build": "rapidoc build",
+    "start": "rapidoc serve",
+    "validate": "rapidoc validate",
+    "preview": "npx serve dist"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "@rapidoc/cli": "^0.1.4",
+    "@rapidoc/server": "^0.1.4"
+  },
+  "devDependencies": {
+    "@rapidoc/portal": "^0.1.4"
+  }
+}

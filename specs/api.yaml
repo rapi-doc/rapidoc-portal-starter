@@ -1,0 +1,96 @@
+openapi: 3.1.0
+info:
+  title: Core Services API
+  version: 1.0.0
+  description: High-performance microservices and developer APIs.
+servers:
+  - url: https://api.example.com/v1
+    description: Production Server
+  - url: https://sandbox.example.com/v1
+    description: Sandbox Environment
+paths:
+  /health:
+    get:
+      summary: Service Health Check
+      description: Returns the operational status and uptime of the system.
+      operationId: getHealth
+      tags:
+        - System
+      responses:
+        '200':
+          description: Service operational
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: healthy
+                  timestamp:
+                    type: string
+                    format: date-time
+
+  /items:
+    get:
+      summary: List items
+      description: Retrieve a paginated collection of catalog items.
+      operationId: listItems
+      tags:
+        - Items
+      responses:
+        '200':
+          description: List of items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Item'
+    post:
+      summary: Create item
+      description: Creates a new catalog item.
+      operationId: createItem
+      tags:
+        - Items
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateItemRequest'
+      responses:
+        '201':
+          description: Item created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+
+components:
+  schemas:
+    Item:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: string
+          example: item_123
+        name:
+          type: string
+          example: Standard Widget
+        status:
+          type: string
+          enum: [active, archived]
+          example: active
+
+    CreateItemRequest:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          example: Premium Widget
